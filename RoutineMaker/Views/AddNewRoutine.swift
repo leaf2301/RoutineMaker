@@ -13,7 +13,44 @@ struct AddNewRoutine: View {
     @Environment(\.managedObjectContext) var viewContext
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack(spacing: 15) {
+                TextFieldAndColorBubble()
+                Divider()
+                    
+                FrequencyAndDayCheck()
+                Divider()
+                    .padding(15)
+
+            }
+            .frame(maxHeight: .infinity, alignment: .top)
+            .padding()
+            .navigationTitle("Add Activity")
+            .navigationBarTitleDisplayMode(.inline)
+            
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        
+                        dismiss()
+                    } label: {
+                        Image(systemName: "xmark.circle")
+                            .tint(.white)
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        
+                        dismiss()
+                    } label: {
+                        Text("Done")
+                            .foregroundColor(.white)
+                    }
+
+                }
+
+            }
+        }
     }
 }
 

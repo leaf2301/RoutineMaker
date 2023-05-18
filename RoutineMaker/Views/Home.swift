@@ -49,6 +49,7 @@ struct Home: View {
         .padding()
         .sheet(isPresented: $vm.addNewRoutine) {
             AddNewRoutine()
+                .environmentObject(vm)
         }
         
     }

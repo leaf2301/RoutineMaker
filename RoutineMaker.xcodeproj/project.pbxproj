@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E16522C12A16807C00969C73 /* TextFieldAndColorBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16522C02A16807C00969C73 /* TextFieldAndColorBubble.swift */; };
+		E16522C32A168AAF00969C73 /* FrequencyAndDayCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16522C22A168AAF00969C73 /* FrequencyAndDayCheck.swift */; };
 		E1B2E1C92A161C8E00FAE599 /* RoutineMakerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2E1C82A161C8E00FAE599 /* RoutineMakerApp.swift */; };
 		E1B2E1CB2A161C8E00FAE599 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2E1CA2A161C8E00FAE599 /* ContentView.swift */; };
 		E1B2E1CD2A161C9000FAE599 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1B2E1CC2A161C9000FAE599 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E16522C02A16807C00969C73 /* TextFieldAndColorBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAndColorBubble.swift; sourceTree = "<group>"; };
+		E16522C22A168AAF00969C73 /* FrequencyAndDayCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyAndDayCheck.swift; sourceTree = "<group>"; };
 		E1B2E1C52A161C8E00FAE599 /* RoutineMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoutineMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B2E1C82A161C8E00FAE599 /* RoutineMakerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineMakerApp.swift; sourceTree = "<group>"; };
 		E1B2E1CA2A161C8E00FAE599 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 			children = (
 				E1B2E1DC2A161D7F00FAE599 /* Home.swift */,
 				E1B2E1E22A1621FD00FAE599 /* AddNewRoutine.swift */,
+				E16522C22A168AAF00969C73 /* FrequencyAndDayCheck.swift */,
+				E16522C02A16807C00969C73 /* TextFieldAndColorBubble.swift */,
 				E1B2E1DB2A161D5900FAE599 /* SubViews */,
 			);
 			path = Views;
@@ -177,12 +183,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1B2E1DF2A161DDA00FAE599 /* DataController.swift in Sources */,
+				E16522C32A168AAF00969C73 /* FrequencyAndDayCheck.swift in Sources */,
 				E1B2E1E12A161DE500FAE599 /* RoutineViewModel.swift in Sources */,
 				E1B2E1D82A161CAC00FAE599 /* RoutineData.xcdatamodeld in Sources */,
 				E1B2E1CB2A161C8E00FAE599 /* ContentView.swift in Sources */,
 				E1B2E1E32A1621FD00FAE599 /* AddNewRoutine.swift in Sources */,
 				E1B2E1DD2A161D7F00FAE599 /* Home.swift in Sources */,
 				E1B2E1C92A161C8E00FAE599 /* RoutineMakerApp.swift in Sources */,
+				E16522C12A16807C00969C73 /* TextFieldAndColorBubble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
