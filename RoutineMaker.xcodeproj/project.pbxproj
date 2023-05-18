@@ -15,6 +15,7 @@
 		E1B2E1DD2A161D7F00FAE599 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2E1DC2A161D7F00FAE599 /* Home.swift */; };
 		E1B2E1DF2A161DDA00FAE599 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2E1DE2A161DDA00FAE599 /* DataController.swift */; };
 		E1B2E1E12A161DE500FAE599 /* RoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2E1E02A161DE500FAE599 /* RoutineViewModel.swift */; };
+		E1B2E1E32A1621FD00FAE599 /* AddNewRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2E1E22A1621FD00FAE599 /* AddNewRoutine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		E1B2E1DC2A161D7F00FAE599 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		E1B2E1DE2A161DDA00FAE599 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		E1B2E1E02A161DE500FAE599 /* RoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineViewModel.swift; sourceTree = "<group>"; };
+		E1B2E1E22A1621FD00FAE599 /* AddNewRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewRoutine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				E1B2E1DC2A161D7F00FAE599 /* Home.swift */,
+				E1B2E1E22A1621FD00FAE599 /* AddNewRoutine.swift */,
 				E1B2E1DB2A161D5900FAE599 /* SubViews */,
 			);
 			path = Views;
@@ -177,6 +180,7 @@
 				E1B2E1E12A161DE500FAE599 /* RoutineViewModel.swift in Sources */,
 				E1B2E1D82A161CAC00FAE599 /* RoutineData.xcdatamodeld in Sources */,
 				E1B2E1CB2A161C8E00FAE599 /* ContentView.swift in Sources */,
+				E1B2E1E32A1621FD00FAE599 /* AddNewRoutine.swift in Sources */,
 				E1B2E1DD2A161D7F00FAE599 /* Home.swift in Sources */,
 				E1B2E1C92A161C8E00FAE599 /* RoutineMakerApp.swift in Sources */,
 			);
