@@ -30,6 +30,10 @@ struct Home: View {
             
             ScrollView(routines.isEmpty ? .init() : .vertical, showsIndicators: false) {
                 VStack(spacing: 15) {
+                    CardView()
+                        .environmentObject(vm)
+                    
+                    
                     Button {
                         vm.addNewRoutine.toggle()
                     } label: {
@@ -48,6 +52,8 @@ struct Home: View {
         .frame(maxWidth: .infinity, alignment: .top)
         .padding()
         .sheet(isPresented: $vm.addNewRoutine) {
+            vm.resetData()
+        } content: {
             AddNewRoutine()
                 .environmentObject(vm)
         }

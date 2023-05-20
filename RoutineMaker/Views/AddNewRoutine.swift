@@ -20,9 +20,12 @@ struct AddNewRoutine: View {
                     
                 FrequencyAndDayCheck()
                 Divider()
-                    .padding(15)
+                    .padding(10)
+                
+                ReminderAndNoti()
 
             }
+            .animation(.easeInOut, value: vm.isReminderOn)
             .frame(maxHeight: .infinity, alignment: .top)
             .padding()
             .navigationTitle("Add Activity")
@@ -44,11 +47,17 @@ struct AddNewRoutine: View {
                         dismiss()
                     } label: {
                         Text("Done")
-                            .foregroundColor(.white)
+                            .foregroundColor(vm.doneStatus() ? .white : .gray)
                     }
+                    .disabled(!vm.doneStatus())
 
                 }
 
+            }
+        }
+        .overlay {
+            if vm.isShowingTime {
+                TimePicker()
             }
         }
     }

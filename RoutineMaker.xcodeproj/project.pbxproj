@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E10C65772A18CD6700D653DF /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10C65762A18CD6700D653DF /* CardView.swift */; };
+		E10C65792A18CDFE00D653DF /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10C65782A18CDFE00D653DF /* Optional.swift */; };
+		E117093A2A175F83003C8662 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11709392A175F83003C8662 /* TimePicker.swift */; };
 		E16522C12A16807C00969C73 /* TextFieldAndColorBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16522C02A16807C00969C73 /* TextFieldAndColorBubble.swift */; };
 		E16522C32A168AAF00969C73 /* FrequencyAndDayCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16522C22A168AAF00969C73 /* FrequencyAndDayCheck.swift */; };
+		E16522C52A168BB200969C73 /* ReminderAndNoti.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16522C42A168BB200969C73 /* ReminderAndNoti.swift */; };
 		E1B2E1C92A161C8E00FAE599 /* RoutineMakerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2E1C82A161C8E00FAE599 /* RoutineMakerApp.swift */; };
 		E1B2E1CB2A161C8E00FAE599 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2E1CA2A161C8E00FAE599 /* ContentView.swift */; };
 		E1B2E1CD2A161C9000FAE599 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1B2E1CC2A161C9000FAE599 /* Assets.xcassets */; };
@@ -21,8 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E10C65762A18CD6700D653DF /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E10C65782A18CDFE00D653DF /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
+		E11709392A175F83003C8662 /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		E16522C02A16807C00969C73 /* TextFieldAndColorBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAndColorBubble.swift; sourceTree = "<group>"; };
 		E16522C22A168AAF00969C73 /* FrequencyAndDayCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyAndDayCheck.swift; sourceTree = "<group>"; };
+		E16522C42A168BB200969C73 /* ReminderAndNoti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderAndNoti.swift; sourceTree = "<group>"; };
 		E1B2E1C52A161C8E00FAE599 /* RoutineMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoutineMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B2E1C82A161C8E00FAE599 /* RoutineMakerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineMakerApp.swift; sourceTree = "<group>"; };
 		E1B2E1CA2A161C8E00FAE599 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,8 +97,6 @@
 			children = (
 				E1B2E1DC2A161D7F00FAE599 /* Home.swift */,
 				E1B2E1E22A1621FD00FAE599 /* AddNewRoutine.swift */,
-				E16522C22A168AAF00969C73 /* FrequencyAndDayCheck.swift */,
-				E16522C02A16807C00969C73 /* TextFieldAndColorBubble.swift */,
 				E1B2E1DB2A161D5900FAE599 /* SubViews */,
 			);
 			path = Views;
@@ -108,6 +114,12 @@
 		E1B2E1DB2A161D5900FAE599 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				E16522C02A16807C00969C73 /* TextFieldAndColorBubble.swift */,
+				E16522C22A168AAF00969C73 /* FrequencyAndDayCheck.swift */,
+				E16522C42A168BB200969C73 /* ReminderAndNoti.swift */,
+				E11709392A175F83003C8662 /* TimePicker.swift */,
+				E10C65762A18CD6700D653DF /* CardView.swift */,
+				E10C65782A18CDFE00D653DF /* Optional.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -185,12 +197,16 @@
 				E1B2E1DF2A161DDA00FAE599 /* DataController.swift in Sources */,
 				E16522C32A168AAF00969C73 /* FrequencyAndDayCheck.swift in Sources */,
 				E1B2E1E12A161DE500FAE599 /* RoutineViewModel.swift in Sources */,
+				E10C65792A18CDFE00D653DF /* Optional.swift in Sources */,
 				E1B2E1D82A161CAC00FAE599 /* RoutineData.xcdatamodeld in Sources */,
 				E1B2E1CB2A161C8E00FAE599 /* ContentView.swift in Sources */,
 				E1B2E1E32A1621FD00FAE599 /* AddNewRoutine.swift in Sources */,
 				E1B2E1DD2A161D7F00FAE599 /* Home.swift in Sources */,
 				E1B2E1C92A161C8E00FAE599 /* RoutineMakerApp.swift in Sources */,
 				E16522C12A16807C00969C73 /* TextFieldAndColorBubble.swift in Sources */,
+				E117093A2A175F83003C8662 /* TimePicker.swift in Sources */,
+				E10C65772A18CD6700D653DF /* CardView.swift in Sources */,
+				E16522C52A168BB200969C73 /* ReminderAndNoti.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
