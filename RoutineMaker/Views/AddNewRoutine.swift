@@ -28,7 +28,7 @@ struct AddNewRoutine: View {
             .animation(.easeInOut, value: vm.isReminderOn)
             .frame(maxHeight: .infinity, alignment: .top)
             .padding()
-            .navigationTitle("Add Activity")
+            .navigationTitle(vm.editRoutine != nil ? "Edit" : "Add Activity")
             .navigationBarTitleDisplayMode(.inline)
             
             .toolbar {
@@ -41,10 +41,27 @@ struct AddNewRoutine: View {
                             .tint(.white)
                     }
                 }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        if vm.deleteRoutine(context: viewContext) {
+                            dismiss()
+                        }
+                    } label: {
+                        Image(systemName: "trash")
+                            .tint(.red)
+                    }
+                    .tint(.red)
+                    .opacity(vm.editRoutine != nil ? 1 : 0)
+                }
+
+                
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        
-                        dismiss()
+                        Task {
+                            if await vm.addRoutine(context: viewContext) {
+                                dismiss()
+                            }
+                        }
                     } label: {
                         Text("Done")
                             .foregroundColor(vm.doneStatus() ? .white : .gray)

@@ -11,12 +11,12 @@ import UserNotifications
 
 class RoutineViewModel: ObservableObject {
     @Published var addNewRoutine: Bool = false
-    @Published var title: String = "Title"
+    @Published var title: String = ""
     @Published var weekDays: [String] = []
     @Published var dayColor: String = "Card-1"
     @Published var isReminderOn: Bool = false
     @Published var reminderDate: Date = dateDefault
-    @Published var reminderText: String = "Text"
+    @Published var reminderText: String = ""
     
     @Published var isShowingTime: Bool = false
     @Published var editRoutine: Routine?
@@ -28,7 +28,14 @@ class RoutineViewModel: ObservableObject {
     
     
     func addRoutine(context: NSManagedObjectContext) async -> Bool {
-        let newRoutine = Routine(context: context)
+        var newRoutine: Routine!
+        if let editRoutine = editRoutine {
+            newRoutine = editRoutine
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: editRoutine.notificationIDs ?? [])
+        } else {
+            newRoutine = Routine(context: context)
+        }
+        
         newRoutine.title = title
         newRoutine.weekDays = weekDays
         newRoutine.color = dayColor
@@ -111,8 +118,17 @@ class RoutineViewModel: ObservableObject {
             isReminderOn = editRoutine.isReminderOn
             reminderText = editRoutine.reminderText ?? "Test"
             reminderDate = editRoutine.notificationDate ?? RoutineViewModel.dateDefault
-
+            
         }
+    }
+    
+    func deleteRoutine(context: NSManagedObjectContext) -> Bool {
+        if let editRoutine = editRoutine {
+            context.delete(editRoutine)
+            try? context.save()
+            return true
+        }
+        return false
     }
     
     

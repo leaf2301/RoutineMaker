@@ -10,27 +10,30 @@ import SwiftUI
 struct CardView: View {
     @FetchRequest(entity: Routine.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Routine.dateAdded, ascending: false)], animation: .easeInOut) var routines: FetchedResults<Routine>
     @EnvironmentObject var vm: RoutineViewModel
-    
-    
+    @Environment(\.managedObjectContext) var viewContext
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack {
-            ForEach(1..<3, id: \.self) { routine in
+            ForEach(routines, id: \.self) { routine in
                 VStack(spacing: 6) {
                     HStack {
-                        Text(vm.title)
+                        Text(routine.title.defaultString)
                             .font(.callout)
                             .fontWeight(.semibold)
                             .lineLimit(1)
                         
                         Image(systemName: "bell.badge.fill")
                             .font(.callout)
-                            .foregroundColor(Color(vm.dayColor))
+                            .foregroundColor(Color(routine.color ?? "Card-1"))
                             .scaleEffect(0.9)
-                            .opacity(vm.isReminderOn ? 1 : 0)
+                            .opacity(routine.isReminderOn ? 1 : 0)
                         
                         Spacer()
                         
-                        Text(vm.weekDays.count == 7 ? "Everyday" : "\(vm.weekDays.count) times a week")
+                        let count = routine.weekDays ?? []
+                        
+                        
+                        Text(count.count == 7 ? "Everyday" : "\(count.count) times a week")
                             .font(.caption)
                             .foregroundColor(.gray)
                     }
@@ -40,7 +43,7 @@ struct CardView: View {
                     let currentWeek = calendar.dateInterval(of: .weekOfMonth, for: Date())
                     let symbols = calendar.weekdaySymbols
                     let startData = currentWeek?.start ?? Date()
-                    let activeWeekDays = vm.weekDays
+                    let activeWeekDays = routine.weekDays ?? []
                     let activePlot = symbols.indices.map { index -> (String, Date) in
                         let currentDate = calendar.date(byAdding: .day, value: index, to: startData)
                         return(symbols[index], currentDate ?? Date())
@@ -63,7 +66,7 @@ struct CardView: View {
                                     .padding(8)
                                     .background(
                                         Circle()
-                                            .fill(Color(vm.dayColor))
+                                            .fill(Color(routine.color ?? "Card-1"))
                                             .opacity(status ? 1 : 0)
                                     
                                     )
@@ -80,9 +83,11 @@ struct CardView: View {
                 .background(
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
                         .fill(Color("C1"))
+                        
                 )
                 .onTapGesture {
-                    
+                    vm.editRoutine = routine
+                    vm.restoreEditData()
                     vm.addNewRoutine.toggle()
                 }
             }
