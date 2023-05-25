@@ -5,7 +5,6 @@ Routine Maker allows us to set up list of habits and choose the days those habit
 SwiftUI
 MVVM
 UserNotifications
-Unit Testing
 Core Data
 
 ![RoutineMaker](https://github.com/leaf2301/RoutineMaker/assets/108396149/da089056-445e-49dc-9754-e07454ca9e0a)
