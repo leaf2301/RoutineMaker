@@ -20,9 +20,23 @@ class RoutineViewModel: ObservableObject {
     
     @Published var isShowingTime: Bool = false
     @Published var editRoutine: Routine?
+    @Published var notificationAccess: Bool = false
+    
+    init() {
+        requestNotifi()
+    }
     static var dateDefault: Date {
         let components = DateComponents(hour: 8, minute: 0)
             return Calendar.current.date(from: components) ?? Date()
+    }
+    
+    func requestNotifi() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert]) { success, error  in
+            DispatchQueue.main.async {
+                self.notificationAccess = success
+            }
+        }
+
     }
     
     
